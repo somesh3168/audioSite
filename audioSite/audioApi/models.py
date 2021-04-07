@@ -40,6 +40,5 @@ class AudioBookModel(models.Model):
     duration = models.PositiveIntegerField(blank=False, null=False, help_text='Enter duration in seconds')
     upload_time = models.DateTimeField(validators=[validate_upload_time],null=True, blank=True, default=None,)
     
-# https://github.com/sahasrara62/filed_audio_file_server/commit/61b3cff3738611f507cbeb81bf00d738772d6a7f
     def __str__(self) -> str:
         return f'{self.audio_book_name} : {self.duration} secs'
