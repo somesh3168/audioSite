@@ -1,6 +1,5 @@
 # audioSite
 
-
 Django Web API that simulates the behavior of an audio file
 server while using a MongoDB / SQL database.
 
@@ -8,7 +7,11 @@ Audio file type can be one of the following:
 - 1 Song
 - 2  Podcast
 - 3 Audiobook
+
+Home Page
+![alt text](https://github.com/somesh3168/audioSite/blob/main/audioHome.JPG)
 # Database
+
 ## Song file fields:
 - ID – (mandatory, integer, unique)
 - Name of the song – (mandatory, string, cannot be larger than 100
@@ -36,7 +39,6 @@ characters)
 - Duration in number of seconds – (mandatory, integer, positive)
 - Uploaded time – (mandatory, Datetime, cannot be in the past)
 
-![alt text](https://github.com/somesh3168/audioSite/blob/main/audioHome.JPG)
 # 4 API Endpoints
 ## Get API
 ```sh
@@ -53,12 +55,30 @@ GET /api/get/<audioFileType>/<audioFileID> -- fetch each item
 ```
 
 > The request will have the following fields:
-> audioFileType – mandatory, one of the 3 audio types possible
-> audioFileMetadata – mandatory, dictionary, contains the metadata for one
-of the three audio files (song, podcast, audiobook)
-
+> get/<audioFileType>
+![alt text](https://github.com/somesh3168/audioSite/blob/main/get_audioFileType.JPG)
+> get/<audioFileType>
 ![alt text](http://url/to/img.png)
+> get/<audioFileType>/<audioFileId>/
+![alt text](https://github.com/somesh3168/audioSite/blob/main/get_audioFileType_audioFileID.JPG)
 
+![alt text](https://github.com/somesh3168/audioSite/blob/main/get_audioFileType_audioFileID_audiobook.JPG)
+## Create API
+```sh
+POST /api/create/<audioFileType>/ -- create item
+
+
+/api/del/song/
+/api/del/podcast/
+/api/del/audiobook/
+```
+
+> audioFileMetadata – mandatory, dictionary, contains the metadata for one
+> of the three audio files (song, podcast, audiobook)
+> create/<audioFileType>/
+![alt text](https://github.com/somesh3168/audioSite/blob/main/post_audioFileType_json_body.JPG)
+> api/create/<audioFileType>/
+![alt text](https://github.com/somesh3168/audioSite/blob/main/post_audioFileType_podcast_object_created.JPG)
 ## Delete API
 ```sh
 
@@ -89,21 +109,11 @@ Update /api/update/<audioFileType>/<audioFileID> -- put request
 > The route be in the following format: “<audioFileType>/<audioFileID>”
 > The request body will be the same as the upload
 
-![alt text](http://url/to/img.png)
-## Create API
-```sh
-POST /api/create/<audioFileType>/ -- create item
+> update/<audioFileType>/<audioFileId>/
+![alt text](https://github.com/somesh3168/audioSite/blob/main/put_audioFileType_json_body.JPG)
+> api/create/<audioFileType>/
+![alt text](https://github.com/somesh3168/audioSite/blob/main/put_audioFileType_podcast_object_updated.JPG)
 
-
-/api/del/song/
-/api/del/podcast/
-/api/del/audiobook/
-```
-
-> audioFileMetadata – mandatory, dictionary, contains the metadata for one
-> of the three audio files (song, podcast, audiobook)
-
-![alt text](http://url/to/img.png)
 
 ### Resources
 
@@ -115,4 +125,3 @@ List of open source resources used to work properly:
 * pymongo==3.11.3
 * pytz==2021.1
 * typing-extensions==3.7.4.3
-
