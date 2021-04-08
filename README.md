@@ -93,7 +93,7 @@ DELETE /api/del/<audioFileType>/<audioFileID> -- delete item
 > The route will be in the following format:
 >“<audioFileType>/<audioFileID>”
 
-![alt text](http://url/to/img.png)
+
 
 ## Update API
 
